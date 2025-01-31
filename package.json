@@ -1,0 +1,31 @@
+{
+  "name": "assessment",
+  "version": "0.1.0",
+  "homepage": "https://avec-assessment.github.io/demo",
+  "private": true,
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "file-saver": "^2.0.5",
+    "firebase": "^10.7.1",
+    "next": "^14.2.12",
+    "react": "^18",
+    "react-dom": "^18",
+    "vega-embed": "^6.24.0",
+    "vega-lite-api": "^5.6.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0"
+  }
+}

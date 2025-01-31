@@ -1,0 +1,1670 @@
+{
+  "datasets": {
+    "day_by_day": {
+    "Date": {"type": "temporal", "full_name": "Date", "description": "", "truncate": null},
+    "Month": {"type": "ordinal", "full_name": "Month", "description": "", "truncate": null},
+    "Year": {"type": "ordinal", "full_name": "Year", "description": "", "truncate": null},
+    "Spending": {"type": "quantitative", "full_name": "Spending ($)", "description": "", "truncate": null},
+    "Income": {"type": "quantitative", "full_name": "Income ($)", "description": "", "truncate": null},
+    "Savings": {"type": "quantitative", "full_name": "Savings ($)", "description": "", "truncate": null},
+    "Spending_Category": {"type": "nominal", "full_name": "Spending category", "description": "", "truncate": null}
+  }
+  },
+  "training1": {
+    "question_meta_data": {
+      "question_text": "Reconstruct the exact chart shown below. This chart shows the sum of spending in each spending category in the month of Jan.",
+      "question_topic": "- Required Training -",
+      "mappings": {"mark": "bar", "x": "Month", "y": "Spending", "color": "Spending_Category", "size": ""}
+    },
+    "dataset": "day_by_day",
+    "model_vis": {
+      "data": {
+        "url": "data/day_by_day_2023_Jan.json"
+      },
+      "mark": {
+        "type": "bar"
+      },
+      "encoding": {
+        "x": {
+          "field": "Month",
+          "type": "ordinal",
+          "sort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
+        },
+        "y": {
+          "field": "Spending",
+          "aggregate": "sum",
+          "type": "quantitative"
+          
+        },
+        "color": {
+          "field": "Spending_Category",
+          "type": "nominal"
+        }
+      }
+    },
+    "question_vis": {
+        "data": {
+          "url": "data/day_by_day_2023_Jan.json"
+        },
+        "mark": {
+          "type": "circle"
+        },
+        "encoding": {
+          "x": {
+            "field": "",
+            "type": ""
+          },
+          "y": {
+            "field": "",
+            "type": ""
+            
+          }
+        }
+      },
+      "initialize": {
+          "chart_type": "bar",
+          "encodings": {
+            "x": {
+                "data": "", 
+                "transformation": ""
+            },
+            "y": {
+                "data": "",
+                "transformation": ""
+            },
+            "size": {
+                "data": "",
+                "transformation": ""
+            },
+            "seq_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "div_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "qual_color": {
+              "data": "",
+              "transformation": ""
+            }
+        }  
+      },
+      "manage_state": {
+        "chart_type": "",
+        "encodings": {
+          "x": {
+              "data": "", 
+              "transformation": ""
+          },
+          "y": {
+              "data": "",
+              "transformation": ""
+          },
+          "size": {
+              "data": "",
+              "transformation": ""
+          },
+          "color": {
+            "data": "",
+            "transformation": ""
+          },
+          "seq_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "div_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "qual_color": {
+            "data": "",
+            "transformation": ""
+          }
+      }  
+    }
+      
+  },
+  "training2": {
+    "question_meta_data": {
+      "question_text": "Reconstruct the exact chart shown below. This chart shows how daily income changed in Jan.",
+      "question_topic": "- Required Training -",
+      "mappings": {"mark": "line", "x": "Date", "y": "Income", "color": "", "size": ""}
+    },
+    "dataset": "day_by_day",
+    "model_vis": {
+      "data": {
+        "url": "data/day_by_day_2023_Jan.json"
+      },
+      "mark": {
+        "type": "line"
+      },
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Income",
+          "type": "quantitative"
+          
+        }
+      }
+    },
+    "question_vis": {
+        "data": {
+          "url": "data/day_by_day_2023_Jan.json"
+        },
+        "mark": {
+          "type": "circle"
+        },
+        "encoding": {
+          "x": {
+            "field": "",
+            "type": ""
+          },
+          "y": {
+            "field": "",
+            "type": ""
+            
+          }
+        }
+      },
+      "initialize": {
+          "chart_type": "bar",
+          "encodings": {
+            "x": {
+                "data": "", 
+                "transformation": ""
+            },
+            "y": {
+                "data": "",
+                "transformation": ""
+            },
+            "size": {
+                "data": "",
+                "transformation": ""
+            },
+            "seq_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "div_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "qual_color": {
+              "data": "",
+              "transformation": ""
+            }
+        }  
+      },
+      "manage_state": {
+        "chart_type": "",
+        "encodings": {
+          "x": {
+              "data": "", 
+              "transformation": ""
+          },
+          "y": {
+              "data": "",
+              "transformation": ""
+          },
+          "size": {
+              "data": "",
+              "transformation": ""
+          },
+          "color": {
+            "data": "",
+            "transformation": ""
+          },
+          "seq_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "div_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "qual_color": {
+            "data": "",
+            "transformation": ""
+          }
+      }  
+    }
+      
+  },
+  "training3": {
+    "question_meta_data": {
+      "question_text": "Reconstruct the exact chart shown below. This chart shows the daily savings and spending in each spending category.",
+      "question_topic": "- Required Training -",
+      "mappings": {"mark": "point", "x": "Savings", "y": "Spending_Category", "color": "", "size": "Spending"}
+    },
+    "dataset": "day_by_day",
+    "model_vis": {
+      "data": {
+        "url": "data/day_by_day_2023_Jan.json"
+      },
+      "mark": {
+        "type": "point"
+      },
+      "encoding": {
+        "x": {
+          "field": "Savings",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Spending_Category",
+          "type": "nominal"
+          
+        },
+        "size": {
+          "field": "Spending",
+          "type": "quantitative"
+        }
+      }
+    },
+    "question_vis": {
+        "data": {
+          "url": "data/day_by_day_2023_Jan.json"
+        },
+        "mark": {
+          "type": "circle"
+        },
+        "encoding": {
+          "x": {
+            "field": "",
+            "type": ""
+          },
+          "y": {
+            "field": "",
+            "type": ""
+            
+          }
+        }
+      },
+      "initialize": {
+          "chart_type": "bar",
+          "encodings": {
+            "x": {
+                "data": "", 
+                "transformation": ""
+            },
+            "y": {
+                "data": "",
+                "transformation": ""
+            },
+            "size": {
+                "data": "",
+                "transformation": ""
+            },
+            "seq_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "div_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "qual_color": {
+              "data": "",
+              "transformation": ""
+            }
+        }  
+      },
+      "manage_state": {
+        "chart_type": "",
+        "encodings": {
+          "x": {
+              "data": "", 
+              "transformation": ""
+          },
+          "y": {
+              "data": "",
+              "transformation": ""
+          },
+          "size": {
+              "data": "",
+              "transformation": ""
+          },
+          "color": {
+            "data": "",
+            "transformation": ""
+          },
+          "seq_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "div_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "qual_color": {
+            "data": "",
+            "transformation": ""
+          }
+      }  
+    }
+      
+  },
+  "training4": {
+    "question_meta_data": {
+      "question_text": "Reconstruct the exact chart shown below. This chart shows the distribution of daily spending.",
+      "question_topic": "- Required Training -",
+      "mappings": {"mark": "bar", "x": "Spending", "y": "count-bin_x", "color": "", "size": ""}
+    },
+    "dataset": "day_by_day",
+    "model_vis": {
+      "data": {
+        "url": "data/day_by_day_2023_Jan.json"
+      },
+      "mark": {
+        "type": "bar"
+      },
+      "encoding": {
+        "x": {
+          "field": "Spending",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "aggregate": "count"
+          
+        }
+      }
+    },
+    "question_vis": {
+        "data": {
+          "url": "data/day_by_day_2023_Jan.json"
+        },
+        "mark": {
+          "type": "circle"
+        },
+        "encoding": {
+          "x": {
+            "field": "",
+            "type": ""
+          },
+          "y": {
+            "field": "",
+            "type": ""
+            
+          }
+        }
+      },
+      "initialize": {
+          "chart_type": "bar",
+          "encodings": {
+            "x": {
+                "data": "", 
+                "transformation": ""
+            },
+            "y": {
+                "data": "",
+                "transformation": ""
+            },
+            "size": {
+                "data": "",
+                "transformation": ""
+            },
+            "seq_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "div_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "qual_color": {
+              "data": "",
+              "transformation": ""
+            }
+        }  
+      },
+      "manage_state": {
+        "chart_type": "",
+        "encodings": {
+          "x": {
+              "data": "", 
+              "transformation": ""
+          },
+          "y": {
+              "data": "",
+              "transformation": ""
+          },
+          "size": {
+              "data": "",
+              "transformation": ""
+          },
+          "color": {
+            "data": "",
+            "transformation": ""
+          },
+          "seq_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "div_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "qual_color": {
+            "data": "",
+            "transformation": ""
+          }
+      }  
+    }
+      
+  },
+  "training5": {
+    "question_meta_data": {
+      "question_text": "Reconstruct the exact chart shown below. This chart shows the sum of monthly spending in each spending category.",
+      "question_topic": "- Required Training -",
+      "mappings": {"mark": "area", "x": "Month", "y": "Spending", "color": "Spending_Category", "size": ""}
+    },
+    "dataset": "day_by_day",
+    "model_vis": {
+      "data": {
+        "url": "data/day_by_day_2023.json"
+      },
+      "mark": {
+        "type": "area"
+      },
+      "encoding": {
+        "x": {
+          "field": "Month",
+          "type": "ordinal",
+          "sort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
+        },
+        "y": {
+          "field": "Spending",
+          "aggregate": "sum",
+          "type": "quantitative"
+          
+        },
+        "color": {
+          "field": "Spending_Category",
+          "type": "nominal"
+        }
+      }
+    },
+    "question_vis": {
+        "data": {
+          "url": "data/day_by_day_2023.json"
+        },
+        "mark": {
+          "type": "circle"
+        },
+        "encoding": {
+          "x": {
+            "field": "",
+            "type": ""
+          },
+          "y": {
+            "field": "",
+            "type": ""
+            
+          }
+        }
+      },
+      "initialize": {
+          "chart_type": "bar",
+          "encodings": {
+            "x": {
+                "data": "", 
+                "transformation": ""
+            },
+            "y": {
+                "data": "",
+                "transformation": ""
+            },
+            "size": {
+                "data": "",
+                "transformation": ""
+            },
+            "seq_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "div_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "qual_color": {
+              "data": "",
+              "transformation": ""
+            }
+        }  
+      },
+      "manage_state": {
+        "chart_type": "",
+        "encodings": {
+          "x": {
+              "data": "", 
+              "transformation": ""
+          },
+          "y": {
+              "data": "",
+              "transformation": ""
+          },
+          "size": {
+              "data": "",
+              "transformation": ""
+          },
+          "color": {
+            "data": "",
+            "transformation": ""
+          },
+          "seq_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "div_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "qual_color": {
+            "data": "",
+            "transformation": ""
+          }
+      }  
+    }
+      
+  },
+  "training6": {
+    "question_meta_data": {
+      "question_text": ["I think that I would like to use this system frequently.", "I found the system unnecessarily complex.", "I thought the system was easy to use.", "I think that I would need the support of a technical person to be able to use this system.", "I found the various functions in this system were well integrated.", "I thought there was too much inconsistency in this system.", "I would imagine that most people would learn to use this system very quickly.", "I found the system very cumbersome to use.", "I felt very confident using the system.", "I needed to learn a lot of things before I could get going with this system."],
+      "question_topic": "The following questions ask for your experience with this system interface so far."
+    },
+    "dataset": "day_by_day",
+    "model_vis": {
+      "data": {
+        "url": "data/day_by_day_2023.json"
+      },
+      "mark": {
+        "type": "area"
+      },
+      "encoding": {
+        "x": {
+          "field": "Month",
+          "type": "ordinal",
+          "sort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
+        },
+        "y": {
+          "field": "Spending",
+          "aggregate": "sum",
+          "type": "quantitative"
+          
+        },
+        "color": {
+          "field": "Spending_Category",
+          "type": "nominal"
+        }
+      }
+    },
+    "question_vis": {
+        "data": {
+          "url": "data/day_by_day_2023.json"
+        },
+        "mark": {
+          "type": "circle"
+        },
+        "encoding": {
+          "x": {
+            "field": "",
+            "type": ""
+          },
+          "y": {
+            "field": "",
+            "type": ""
+            
+          }
+        }
+      },
+      "initialize": {
+          "chart_type": "bar",
+          "encodings": {
+            "x": {
+                "data": "", 
+                "transformation": ""
+            },
+            "y": {
+                "data": "",
+                "transformation": ""
+            },
+            "size": {
+                "data": "",
+                "transformation": ""
+            },
+            "seq_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "div_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "qual_color": {
+              "data": "",
+              "transformation": ""
+            }
+        }  
+      },
+      "manage_state": {
+        "chart_type": "",
+        "encodings": {
+          "x": {
+              "data": "", 
+              "transformation": ""
+          },
+          "y": {
+              "data": "",
+              "transformation": ""
+          },
+          "size": {
+              "data": "",
+              "transformation": ""
+          },
+          "color": {
+            "data": "",
+            "transformation": ""
+          },
+          "seq_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "div_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "qual_color": {
+            "data": "",
+            "transformation": ""
+          }
+      }  
+    }
+      
+  },
+  "item1": {
+    "question_meta_data": {
+      "question_text": "Daily income rarely went over $300.",
+      "question_topic": "Create the best chart to use to determine whether this statement is true:"
+    },
+    "dataset": "day_by_day",
+    "question_vis": {
+        "data": {
+          "url": "data/day_by_day_2023_Jan.json"
+        },
+        "mark": {
+          "type": "circle"
+        },
+        "encoding": {
+          "x": {
+            "field": "",
+            "type": ""
+          },
+          "y": {
+            "field": "",
+            "type": ""
+            
+          }
+        }
+      },
+      "initialize": {
+          "chart_type": "bar",
+          "encodings": {
+            "x": {
+                "data": "", 
+                "transformation": ""
+            },
+            "y": {
+                "data": "",
+                "transformation": ""
+            },
+            "size": {
+                "data": "",
+                "transformation": ""
+            },
+            "seq_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "div_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "qual_color": {
+              "data": "",
+              "transformation": ""
+            }
+        }  
+      },
+      "manage_state": {
+        "chart_type": "",
+        "encodings": {
+          "x": {
+              "data": "", 
+              "transformation": ""
+          },
+          "y": {
+              "data": "",
+              "transformation": ""
+          },
+          "size": {
+              "data": "",
+              "transformation": ""
+          },
+          "color": {
+            "data": "",
+            "transformation": ""
+          },
+          "seq_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "div_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "qual_color": {
+            "data": "",
+            "transformation": ""
+          }
+      }  
+    }
+      
+  },
+  "item2": {
+    "question_meta_data": {
+      "question_text": "Total monthly utilities spending was generally lower than $300.",
+      "question_topic": "Create the best chart to use to determine whether this statement is true:"
+    },
+    "dataset": "day_by_day",
+    "question_vis": {
+        "data": {
+          "url": "data/day_by_day_2021.json"
+        },
+        "mark": {
+          "type": "circle"
+        },
+        "encoding": {
+          "x": {
+            "field": "",
+            "type": ""
+          },
+          "y": {
+            "field": "",
+            "type": ""
+            
+          }
+        }
+      },
+      "initialize": {
+          "chart_type": "bar",
+          "encodings": {
+            "x": {
+                "data": "", 
+                "transformation": ""
+            },
+            "y": {
+                "data": "",
+                "transformation": ""
+            },
+            "size": {
+                "data": "",
+                "transformation": ""
+            },
+            "seq_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "div_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "qual_color": {
+              "data": "",
+              "transformation": ""
+            }
+        }  
+      },
+      "manage_state": {
+        "chart_type": "",
+        "encodings": {
+          "x": {
+              "data": "", 
+              "transformation": ""
+          },
+          "y": {
+              "data": "",
+              "transformation": ""
+          },
+          "size": {
+              "data": "",
+              "transformation": ""
+          },
+          "color": {
+            "data": "",
+            "transformation": ""
+          },
+          "seq_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "div_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "qual_color": {
+            "data": "",
+            "transformation": ""
+          }
+      }  
+    }
+      
+  },
+  "item4": {
+    "question_meta_data": {
+      "question_text": "Total yearly spending rarely exceeded $10,000.",
+      "question_topic": "Create the best chart to use to determine whether this statement is true:"
+    },
+    "dataset": "day_by_day",
+    "question_vis": {
+        "data": {
+          "url": "data/day_by_day_all.json"
+        },
+        "mark": {
+          "type": "circle"
+        },
+        "encoding": {
+          "x": {
+            "field": "",
+            "type": ""
+          },
+          "y": {
+            "field": "",
+            "type": ""
+            
+          }
+        }
+      },
+      "initialize": {
+          "chart_type": "bar",
+          "encodings": {
+            "x": {
+                "data": "", 
+                "transformation": ""
+            },
+            "y": {
+                "data": "",
+                "transformation": ""
+            },
+            "size": {
+                "data": "",
+                "transformation": ""
+            },
+            "seq_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "div_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "qual_color": {
+              "data": "",
+              "transformation": ""
+            }
+        }  
+      },
+      "manage_state": {
+        "chart_type": "",
+        "encodings": {
+          "x": {
+              "data": "", 
+              "transformation": ""
+          },
+          "y": {
+              "data": "",
+              "transformation": ""
+          },
+          "size": {
+              "data": "",
+              "transformation": ""
+          },
+          "color": {
+            "data": "",
+            "transformation": ""
+          },
+          "seq_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "div_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "qual_color": {
+            "data": "",
+            "transformation": ""
+          }
+      }  
+    }
+      
+  },
+  "item12": {
+    "question_meta_data": {
+      "question_text": "The range of daily transport spending was wider than food spending.",
+      "question_topic": "Create the best chart to use to determine whether this statement is true:"
+    },
+    "dataset": "day_by_day",
+    "question_vis": {
+        "data": {
+          "url": "data/day_by_day_2020_AprMay_TF.json"
+        },
+        "mark": {
+          "type": "circle"
+        },
+        "encoding": {
+          "x": {
+            "field": "",
+            "type": ""
+          },
+          "y": {
+            "field": "",
+            "type": ""
+            
+          }
+        }
+      },
+      "initialize": {
+          "chart_type": "bar",
+          "encodings": {
+            "x": {
+                "data": "", 
+                "transformation": ""
+            },
+            "y": {
+                "data": "",
+                "transformation": ""
+            },
+            "size": {
+                "data": "",
+                "transformation": ""
+            },
+            "seq_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "div_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "qual_color": {
+              "data": "",
+              "transformation": ""
+            }
+        }  
+      },
+      "manage_state": {
+        "chart_type": "",
+        "encodings": {
+          "x": {
+              "data": "", 
+              "transformation": ""
+          },
+          "y": {
+              "data": "",
+              "transformation": ""
+          },
+          "size": {
+              "data": "",
+              "transformation": ""
+          },
+          "color": {
+            "data": "",
+            "transformation": ""
+          },
+          "seq_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "div_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "qual_color": {
+            "data": "",
+            "transformation": ""
+          }
+      }  
+    }
+      
+  },
+  "item17": {
+    "question_meta_data": {
+      "question_text": "Daily spending often fluctuated between about $10 to about $30.",
+      "question_topic": "Create the best chart to use to determine whether this statement is true:"
+    },
+    "dataset": "day_by_day",
+    "question_vis": {
+        "data": {
+          "url": "data/day_by_day_2020_Entertainment.json"
+        },
+        "mark": {
+          "type": "circle"
+        },
+        "encoding": {
+          "x": {
+            "field": "",
+            "type": ""
+          },
+          "y": {
+            "field": "",
+            "type": ""
+            
+          }
+        }
+      },
+      "initialize": {
+          "chart_type": "bar",
+          "encodings": {
+            "x": {
+                "data": "", 
+                "transformation": ""
+            },
+            "y": {
+                "data": "",
+                "transformation": ""
+            },
+            "size": {
+                "data": "",
+                "transformation": ""
+            },
+            "seq_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "div_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "qual_color": {
+              "data": "",
+              "transformation": ""
+            }
+        }  
+      },
+      "manage_state": {
+        "chart_type": "",
+        "encodings": {
+          "x": {
+              "data": "", 
+              "transformation": ""
+          },
+          "y": {
+              "data": "",
+              "transformation": ""
+          },
+          "size": {
+              "data": "",
+              "transformation": ""
+          },
+          "color": {
+            "data": "",
+            "transformation": ""
+          },
+          "seq_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "div_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "qual_color": {
+            "data": "",
+            "transformation": ""
+          }
+      }  
+    }
+      
+  },
+  "item19": {
+    "question_meta_data": {
+      "question_text": "Daily savings was generally higher when income was higher.",
+      "question_topic": "Create the best chart to use to determine whether this statement is true:"
+    },
+    "dataset": "day_by_day",
+    "question_vis": {
+        "data": {
+          "url": "data/day_by_day_2023_Jan.json"
+        },
+        "mark": {
+          "type": "circle"
+        },
+        "encoding": {
+          "x": {
+            "field": "",
+            "type": ""
+          },
+          "y": {
+            "field": "",
+            "type": ""
+            
+          }
+        }
+      },
+      "initialize": {
+          "chart_type": "bar",
+          "encodings": {
+            "x": {
+                "data": "", 
+                "transformation": ""
+            },
+            "y": {
+                "data": "",
+                "transformation": ""
+            },
+            "size": {
+                "data": "",
+                "transformation": ""
+            },
+            "seq_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "div_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "qual_color": {
+              "data": "",
+              "transformation": ""
+            }
+        }  
+      },
+      "manage_state": {
+        "chart_type": "",
+        "encodings": {
+          "x": {
+              "data": "", 
+              "transformation": ""
+          },
+          "y": {
+              "data": "",
+              "transformation": ""
+          },
+          "size": {
+              "data": "",
+              "transformation": ""
+          },
+          "color": {
+            "data": "",
+            "transformation": ""
+          },
+          "seq_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "div_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "qual_color": {
+            "data": "",
+            "transformation": ""
+          }
+      }  
+    }
+      
+  },
+  "item22": {
+    "question_meta_data": {
+      "question_text": "The number of times that daily spending was around $50 increased from 2020 to 2023.",
+      "question_topic": "Create the best chart to use to determine whether this statement is true:"
+    },
+    "dataset": "day_by_day",
+    "question_vis": {
+        "data": {
+          "url": "data/day_by_day_all.json"
+        },
+        "mark": {
+          "type": "circle"
+        },
+        "encoding": {
+          "x": {
+            "field": "",
+            "type": ""
+          },
+          "y": {
+            "field": "",
+            "type": ""
+            
+          }
+        }
+      },
+      "initialize": {
+          "chart_type": "bar",
+          "encodings": {
+            "x": {
+                "data": "", 
+                "transformation": ""
+            },
+            "y": {
+                "data": "",
+                "transformation": ""
+            },
+            "size": {
+                "data": "",
+                "transformation": ""
+            },
+            "seq_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "div_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "qual_color": {
+              "data": "",
+              "transformation": ""
+            }
+        }  
+      },
+      "manage_state": {
+        "chart_type": "",
+        "encodings": {
+          "x": {
+              "data": "", 
+              "transformation": ""
+          },
+          "y": {
+              "data": "",
+              "transformation": ""
+          },
+          "size": {
+              "data": "",
+              "transformation": ""
+          },
+          "color": {
+            "data": "",
+            "transformation": ""
+          },
+          "seq_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "div_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "qual_color": {
+            "data": "",
+            "transformation": ""
+          }
+      }  
+    }
+      
+  },
+  "item28": {
+    "question_meta_data": {
+      "question_text": "Total monthly utilities spending strictly decreased from Jul to Oct.",
+      "question_topic": "Create the best chart to use to determine whether this statement is true:"
+    },
+    "dataset": "day_by_day",
+    "question_vis": {
+        "data": {
+          "url": "data/day_by_day_2022_JulAugSeptOct.json"
+        },
+        "mark": {
+          "type": "circle"
+        },
+        "encoding": {
+          "x": {
+            "field": "",
+            "type": ""
+          },
+          "y": {
+            "field": "",
+            "type": ""
+            
+          }
+        }
+      },
+      "initialize": {
+          "chart_type": "bar",
+          "encodings": {
+            "x": {
+                "data": "", 
+                "transformation": ""
+            },
+            "y": {
+                "data": "",
+                "transformation": ""
+            },
+            "size": {
+                "data": "",
+                "transformation": ""
+            },
+            "seq_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "div_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "qual_color": {
+              "data": "",
+              "transformation": ""
+            }
+        }  
+      },
+      "manage_state": {
+        "chart_type": "",
+        "encodings": {
+          "x": {
+              "data": "", 
+              "transformation": ""
+          },
+          "y": {
+              "data": "",
+              "transformation": ""
+          },
+          "size": {
+              "data": "",
+              "transformation": ""
+          },
+          "color": {
+            "data": "",
+            "transformation": ""
+          },
+          "seq_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "div_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "qual_color": {
+            "data": "",
+            "transformation": ""
+          }
+      }  
+    }
+      
+  },
+  "item30": {
+    "question_meta_data": {
+      "question_text": "Daily food spending consistently decreased at the same rate as transport spending.",
+      "question_topic": "Create the best chart to use to determine whether this statement is true:"
+    },
+    "dataset": "day_by_day",
+    "question_vis": {
+        "data": {
+          "url": "data/day_by_day_2022_Dec_TF.json"
+        },
+        "mark": {
+          "type": "circle"
+        },
+        "encoding": {
+          "x": {
+            "field": "",
+            "type": ""
+          },
+          "y": {
+            "field": "",
+            "type": ""
+            
+          }
+        }
+      },
+      "initialize": {
+          "chart_type": "bar",
+          "encodings": {
+            "x": {
+                "data": "", 
+                "transformation": ""
+            },
+            "y": {
+                "data": "",
+                "transformation": ""
+            },
+            "size": {
+                "data": "",
+                "transformation": ""
+            },
+            "seq_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "div_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "qual_color": {
+              "data": "",
+              "transformation": ""
+            }
+        }  
+      },
+      "manage_state": {
+        "chart_type": "",
+        "encodings": {
+          "x": {
+              "data": "", 
+              "transformation": ""
+          },
+          "y": {
+              "data": "",
+              "transformation": ""
+          },
+          "size": {
+              "data": "",
+              "transformation": ""
+          },
+          "color": {
+            "data": "",
+            "transformation": ""
+          },
+          "seq_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "div_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "qual_color": {
+            "data": "",
+            "transformation": ""
+          }
+      }  
+    }
+      
+  },
+  "item39": {
+    "question_meta_data": {
+      "question_text": "Do exactly the following: click 'line' for mark type and select 'Date' for the Y-axis.",
+      "attention_check": "This is still an attention check. Just select 'False' and click 'Next'.",
+      "question_topic": "This is an attention check:"
+    },
+    "dataset": "day_by_day",
+    "question_vis": {
+        "data": {
+          "url": "data/day_by_day_2021.json"
+        },
+        "mark": {
+          "type": "circle"
+        },
+        "encoding": {
+          "x": {
+            "field": "",
+            "type": ""
+          },
+          "y": {
+            "field": "",
+            "type": ""
+            
+          }
+        }
+      },
+      "initialize": {
+          "chart_type": "bar",
+          "encodings": {
+            "x": {
+                "data": "", 
+                "transformation": ""
+            },
+            "y": {
+                "data": "",
+                "transformation": ""
+            },
+            "size": {
+                "data": "",
+                "transformation": ""
+            },
+            "seq_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "div_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "qual_color": {
+              "data": "",
+              "transformation": ""
+            }
+        }  
+      },
+      "manage_state": {
+        "chart_type": "",
+        "encodings": {
+          "x": {
+              "data": "", 
+              "transformation": ""
+          },
+          "y": {
+              "data": "",
+              "transformation": ""
+          },
+          "size": {
+              "data": "",
+              "transformation": ""
+          },
+          "color": {
+            "data": "",
+            "transformation": ""
+          },
+          "seq_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "div_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "qual_color": {
+            "data": "",
+            "transformation": ""
+          }
+      }  
+    }
+      
+  },
+  "item41": {
+    "question_meta_data": {
+      "question_text": "Do exactly the following: click 'area' for mark type and select 'Savings ($)' for the Y-axis and 'Date' for the X-axis.",
+      "attention_check": "This is still an attention check. Just select 'True' and click 'Next'.",
+      "question_topic": "This is an attention check:"
+    },
+    "dataset": "day_by_day",
+    "question_vis": {
+        "data": {
+          "url": "data/day_by_day_2021.json"
+        },
+        "mark": {
+          "type": "circle"
+        },
+        "encoding": {
+          "x": {
+            "field": "",
+            "type": ""
+          },
+          "y": {
+            "field": "",
+            "type": ""
+            
+          }
+        }
+      },
+      "initialize": {
+          "chart_type": "bar",
+          "encodings": {
+            "x": {
+                "data": "", 
+                "transformation": ""
+            },
+            "y": {
+                "data": "",
+                "transformation": ""
+            },
+            "size": {
+                "data": "",
+                "transformation": ""
+            },
+            "seq_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "div_color": {
+                "data": "",
+                "transformation": ""
+            },
+            "qual_color": {
+              "data": "",
+              "transformation": ""
+            }
+        }  
+      },
+      "manage_state": {
+        "chart_type": "",
+        "encodings": {
+          "x": {
+              "data": "", 
+              "transformation": ""
+          },
+          "y": {
+              "data": "",
+              "transformation": ""
+          },
+          "size": {
+              "data": "",
+              "transformation": ""
+          },
+          "color": {
+            "data": "",
+            "transformation": ""
+          },
+          "seq_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "div_color": {
+              "data": "",
+              "transformation": ""
+          },
+          "qual_color": {
+            "data": "",
+            "transformation": ""
+          }
+      }  
+    }
+      
+  }
+
+}
