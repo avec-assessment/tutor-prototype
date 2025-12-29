@@ -175,6 +175,9 @@ const ConstructionItemComponent = (props) => {
   const [canShowCover, setCanShowCover] = useState(true)
   const [canShowPartCover, setCanShowPartCover] = useState(true)
   const [itemOrder, setItemOrder] = useState(["1", "2", "4", "39", "17", "19", "28", "41", "12", "22", "30"])
+  const [answerSet, setAnswerSet] = useState([]);
+  const [startTime, setStartTime] = useState(0);
+  const [addedAnswer, setAddedAnswer] = useState(0);
   
   console.log("in CREATE item component!")
   console.log(props)
@@ -514,6 +517,96 @@ const ConstructionItemComponent = (props) => {
     
   }
 
+  const clearVis = (e) => {
+    let vis_spec_update = loadVis
+    vis_spec_update["encoding"] = {
+      "x": {
+        "field": "",
+        "type": ""
+      },
+      "y": {
+        "field": "",
+        "type": ""
+        
+      }
+    }
+    setLoadVis(vis_spec_update)
+    embed('#questionVis', vis_spec_update, {"actions": false});
+    console.log(vis_spec_update)
+    setSelectedChart(false)
+    setSelectedVar(false)
+    let chart_tiles = document.getElementsByClassName("chartTilesContainer")
+    for (let index = 0; index < chart_tiles.length; index += 1) {
+      if (chart_tiles[index].classList.contains("selectedChart")) {
+        chart_tiles[index].classList.remove("selectedChart");
+      }
+    }
+    setCurrentItemState(props.item_bank[currentItem]["manage_state"]);
+    document.getElementById("data-y").value = ""
+    document.getElementById("data-x").value = ""
+    document.getElementById("data-color").value = ""
+    document.getElementById("data-size").value = ""
+
+  }
+
+  const addVis = (e) => {
+    console.log(answerSet)
+    // const answer_spec = loadVis
+    // let update_answers = answerSet
+    // update_answers.push(loadVis)
+
+    
+    // if (addedAnswer == 0) {
+    //   let restart = new Date().getTime()
+    //   saveRemoveAnswer(e, "item_"+props.item, restart)
+    // }
+    
+    setAnswerSet([ // with a new array
+      ...answerSet, // that contains all the old items
+      {"time": startTime,
+       "answer_index": addedAnswer} // and one new item at the end
+    ])
+
+    // const newAnswerSet = [...answerSet]
+    // newAnswerSet.push(loadVis)
+    // setAnswerSet(newAnswerSet)
+
+    console.log(addedAnswer)
+    console.log(answerSet)
+    let index_answer = {}
+    index_answer["time"] = startTime
+    index_answer[addedAnswer] = loadVis
+    // saveExpertAnswers(e, "item_"+props.item, index_answer)
+
+    let answers_container = document.getElementById("displayAnswers")
+
+    let answer_added =  document.createElement("div")
+    let show_answer = document.createElement("div")
+    show_answer.id = "answer" + addedAnswer
+    let remove_button = document.createElement("div")
+    remove_button.classList.add("remove_button")
+    remove_button.id = 'remove_' + addedAnswer
+    remove_button.innerHTML = "Remove"
+    remove_button.addEventListener("click", function() {
+      // alert("clicked"+remove_button.id)
+      let remove_index = {}
+      remove_index["time"] = startTime
+      remove_index["index"] = addedAnswer
+      // saveRemoveAnswer(e, "item_"+props.item, remove_index)
+      remove_button.parentNode.classList.remove("answerAddedContainer")
+      remove_button.parentNode.classList.add("hideDescription")
+    });
+    
+    answer_added.appendChild(show_answer)
+    answer_added.appendChild(remove_button)
+    answer_added.classList.add("answerAddedContainer")
+    answers_container.appendChild(answer_added)
+    answers_container.classList.add("answersContainer")
+    embed('#'+ show_answer.id, loadVis, {"actions": false});
+    document.getElementById("done").classList.remove("hideDescription")
+    setAddedAnswer(addedAnswer + 1)
+  }
+
   const nextItem = (e) => {
 
     if (stepbystep) {
@@ -672,6 +765,15 @@ const ConstructionItemComponent = (props) => {
                             <img className="chartTiles" src={tileSets[chart_tiles]["chart"]} onClick={() => changeChartType(chart_tiles)}></img>
                         </div>
                     ))}
+                    <div className='buttonsContainer'>
+                    
+                      <div id="startNew" onClick={(e) => clearVis(e)}>
+                          <p>Clear all selections</p>
+                      </div>
+                      {/* <div id="done" className="hideDescription" onClick={(e) => nextItem(e)}>
+                          <p>Done</p>
+                      </div> */}
+                    </div>
                     </div>
                 </div> : null}
             </div>
@@ -814,16 +916,32 @@ const ConstructionItemComponent = (props) => {
                     <textarea id="questionAnswer" name="questionAnswer" rows="5" cols="40"></textarea>
                     <p className="hideDescription" id="requiredLabelOE" style={{color:"red"}}>* This is required</p>
                 </div> : null}
-              
+              {showTextBox || !props.assessment ? 
                 <div id="nextButton" onClick={(e) => nextItem(e)}>
                     <p>Next</p>
-                </div>
-                <p className="pageNote"><i>Note: you <b>cannot go back</b> after proceeding.</i></p>
+                </div> :
+                <div id="nextButton" style={{marginBottom:"4rem"}} onClick={(e) => addVis(e)}>
+                    <p>Add</p>
+                </div>}
                 <p id='proceeding' className='hideDescription'>Proceeding...</p>
 
               </div>
         
         </div>
+
+      {props.assessment && !showTextBox ? 
+        <div>
+          <hr></hr>
+          <div id="displayAnswers">
+                      
+          </div>
+          <div id="done" className="hideDescription" onClick={(e) => nextItem(e)}>
+              <p>Done</p>
+          </div>
+        </div>
+        :
+        null
+        }  
      
       </div>}
     

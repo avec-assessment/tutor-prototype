@@ -688,7 +688,7 @@
   "item1": {
     "question_meta_data": {
       "question_text": "Daily income rarely went over $300.",
-      "question_topic": "Create the best chart to use to determine whether this statement is true:"
+      "question_topic": "Create charts to help you determine whether the following statement is true or false:"
     },
     "dataset": "day_by_day",
     "question_vis": {
