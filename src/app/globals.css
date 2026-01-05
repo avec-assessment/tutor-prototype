@@ -273,7 +273,7 @@ img {
 }
 
 .hideDescription {
-  display: none;
+  display: none !important;
 }
 
 .dataTiles {

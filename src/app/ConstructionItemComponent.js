@@ -585,6 +585,7 @@ const ConstructionItemComponent = (props) => {
     show_answer.id = "answer" + addedAnswer
     let remove_button = document.createElement("div")
     remove_button.classList.add("remove_button")
+    remove_button.classList.add("hideDescription")
     remove_button.id = 'remove_' + addedAnswer
     remove_button.innerHTML = "Remove"
     remove_button.addEventListener("click", function() {
@@ -605,6 +606,17 @@ const ConstructionItemComponent = (props) => {
     embed('#'+ show_answer.id, loadVis, {"actions": false});
     document.getElementById("done").classList.remove("hideDescription")
     setAddedAnswer(addedAnswer + 1)
+  }
+
+  const evaluatePhase = (e) => {
+    console.log("IN EVALUATE")
+    document.getElementById("workingTiles").classList.add("hideDescription")
+    document.getElementById("visContainer").classList.add("hideDescription")
+    let remove_buttons = document.getElementsByClassName("remove_button")
+    for (let index = 0; index < remove_buttons.length; index += 1) {
+      remove_buttons[index].classList.remove("hideDescription")
+    }
+
   }
 
   const nextItem = (e) => {
@@ -935,7 +947,7 @@ const ConstructionItemComponent = (props) => {
           <div id="displayAnswers">
                       
           </div>
-          <div id="done" className="hideDescription" onClick={(e) => nextItem(e)}>
+          <div id="done" className="hideDescription" onClick={(e) => evaluatePhase(e)}>
               <p>Done</p>
           </div>
         </div>
